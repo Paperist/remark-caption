@@ -1,0 +1,27 @@
+{
+  "name": "@paperist/remark-table-caption",
+  "description": "wooorm/remark plugin for table caption",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^6.0.51",
+    "typescript": "^2.0.10"
+  },
+  "files": [
+    "package.json",
+    "README",
+    "LICENSE",
+    "lib",
+    "index.js"
+  ],
+  "keywords": [
+    "markdown",
+    "remark"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "exit 0"
+  }
+}
