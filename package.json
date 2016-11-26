@@ -1,7 +1,7 @@
 {
   "name": "@paperist/remark-table-caption",
   "description": "wooorm/remark plugin for table caption",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^6.0.51",
