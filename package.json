@@ -11,9 +11,11 @@
   "bugs": {
     "url": "https://github.com/Paperist/remark-table-caption/issues"
   },
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "directories": {
     "lib": "lib"
   },
@@ -50,9 +52,15 @@
     "typescript": "^2.4.2",
     "unified": "^6.1.5"
   },
-  "keywords": ["markdown", "remark"],
+  "keywords": [
+    "markdown",
+    "remark"
+  ],
   "lint-staged": {
-    "package.json": ["prettier-package-json --write", "git add"]
+    "package.json": [
+      "prettier-package-json --write",
+      "git add"
+    ]
   },
   "types": "lib/index.d.ts"
 }
