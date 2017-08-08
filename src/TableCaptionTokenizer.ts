@@ -1,16 +1,7 @@
-import { UNIST } from 'unist';
 import { MDAST } from 'mdast';
 import * as RemarkParse from 'remark-parse';
 
 import { parse, ParseResult } from './peg/tableCaption';
-
-declare module 'mdast' {
-  export namespace MDAST {
-    interface TableCaption extends UNIST.Parent {
-      type: 'tableCaption';
-    }
-  }
-}
 
 const MathTokenizer: RemarkParse.Tokenizer = function(eat, value, silent) {
   let result: ParseResult;
