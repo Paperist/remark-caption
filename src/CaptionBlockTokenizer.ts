@@ -1,9 +1,9 @@
 import * as mdast from 'mdast';
 import * as RemarkParse from 'remark-parse';
 
-import { parse, ParseResult } from './peg/tableCaption';
+import { parse, ParseResult } from './peg/captionBlock';
 
-const MathTokenizer = function(this: any, eat: RemarkParse.Eat, value: string, silent?: boolean) {
+const CaptionBlockTokenizer = function(this: any, eat: RemarkParse.Eat, value: string, silent?: boolean) {
   let result: ParseResult;
   try {
     result = parse(value);
@@ -24,12 +24,12 @@ const MathTokenizer = function(this: any, eat: RemarkParse.Eat, value: string, s
     now.offset += offset;
   }
 
-  const node: mdast.TableCaption = {
-    type: 'tableCaption',
+  const node: mdast.CaptionBlock = {
+    type: 'captionBlock',
     children: this.tokenizeInline(result.caption, now),
   };
 
   return eat(matchStr)(node);
 };
 
-export default MathTokenizer;
+export default CaptionBlockTokenizer;

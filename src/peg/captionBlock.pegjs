@@ -5,23 +5,23 @@ All
   }
 
 Match
-  = space:_* data:TableCaption '\n'?
+  = space:_* data:Caption '\n'?
   {
     return Object.assign(data, {
       location: location(),
     });
   }
 
-TableCaption
-  = TableCaptionHeader _* caption:(Char*)
+Caption
+  = CaptionHeader _* caption:(Char*)
   {
     return {
       caption: caption.join(''),
     };
   }
 
-TableCaptionHeader
-  = ('Table' / 'table')? _* ':'
+CaptionHeader
+  = ([^:\n])* _* ':'
 
 Char
   = c:('\\' [^\n] / !'\\' [^\n]) { return c.join(''); }

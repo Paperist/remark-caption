@@ -1,12 +1,12 @@
 {
-  "name": "@paperist/remark-table-caption",
-  "description": "wooorm/remark plugin for table caption",
+  "name": "@paperist/remark-caption",
+  "description": "wooorm/remark plugin for caption",
   "license": "MIT",
   "author": "3846masa <3846masahiro+git@gmail.com>",
-  "homepage": "https://github.com/Paperist/remark-table-caption#readme",
-  "repository": "git+https://github.com/Paperist/remark-table-caption.git",
+  "homepage": "https://github.com/Paperist/remark-caption#readme",
+  "repository": "git+https://github.com/Paperist/remark-caption.git",
   "bugs": {
-    "url": "https://github.com/Paperist/remark-table-caption/issues"
+    "url": "https://github.com/Paperist/remark-caption/issues"
   },
   "version": "1.0.1",
   "main": "lib/index.js",
@@ -17,7 +17,7 @@
     "prebuild": "npm-run-all clean prebuild:mkdir",
     "build": "npm-run-all -p build:*",
     "prebuild:mkdir": "mkdirp lib/peg",
-    "build:peg": "pegjs -o ./lib/peg/tableCaption.js ./src/peg/tableCaption.pegjs",
+    "build:peg": "pegjs -o ./lib/peg/captionBlock.js ./src/peg/captionBlock.pegjs",
     "build:tsc": "tsc",
     "clean": "rimraf lib"
   },

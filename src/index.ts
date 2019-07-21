@@ -1,7 +1,7 @@
 import './definitions';
 import RemarkParse from 'remark-parse';
 
-import TableCaptionTokenizer from './TableCaptionTokenizer';
+import CaptionBlockTokenizer from './CaptionBlockTokenizer';
 import transformer from './transformer';
 
 function attacher(this: RemarkParse.Parse) {
@@ -9,8 +9,8 @@ function attacher(this: RemarkParse.Parse) {
 
   const blockTokenizers = (Parser.prototype as any).blockTokenizers;
   const blockMethods = Parser.prototype.blockMethods;
-  blockTokenizers['tableCaption'] = TableCaptionTokenizer;
-  blockMethods.splice(blockMethods.indexOf('paragraph'), 0, 'tableCaption');
+  blockTokenizers['captionBlock'] = CaptionBlockTokenizer;
+  blockMethods.splice(blockMethods.indexOf('paragraph'), 0, 'captionBlock');
 
   return transformer;
 }
