@@ -21,7 +21,7 @@ Caption
   }
 
 CaptionHeader
-  = ([^:\n])* _* ':'
+  = ('Table' / 'table' / 'Code' / 'code')? _* ':'
 
 Char
   = c:('\\' [^\n] / !'\\' [^\n]) { return c.join(''); }

@@ -52,6 +52,13 @@ const markdown = `
 |    1  |    1 |     1   |     1  |
 
 Table: Demonstration of pipe table syntax.
+
+
+~~~rb
+puts "Hello World!";
+~~~
+
+Code: Hello World written by Ruby.
 `;
 
 const processor = unified()
