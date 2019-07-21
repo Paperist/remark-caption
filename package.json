@@ -19,7 +19,8 @@
     "prebuild:mkdir": "mkdirp lib/peg",
     "build:peg": "pegjs -o ./lib/peg/captionBlock.js ./src/peg/captionBlock.pegjs",
     "build:tsc": "tsc",
-    "clean": "rimraf lib"
+    "clean": "rimraf lib",
+    "test": "exit 0"
   },
   "types": "lib/index.d.ts",
   "dependencies": {
