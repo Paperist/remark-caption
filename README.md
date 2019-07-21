@@ -73,7 +73,7 @@ See also [mdast], [unist].
 
 ### `CaptionBlock`
 
-`CaptionBlock` extends [`Parent`][unist-parnet].
+`CaptionBlock` extends [`Parent`][unist-parent].
 
 ```typescript
 interface CaptionBlock extends Parent {
@@ -101,7 +101,7 @@ Yields:
 }
 ```
 
-[unist-caption]: https://github.com/syntax-tree/unist#caption
+[unist-parent]: https://github.com/syntax-tree/unist#parent
 
 ## Contribute
 
