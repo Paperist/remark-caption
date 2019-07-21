@@ -1,9 +1,9 @@
-import { MDAST } from 'mdast';
+import * as mdast from 'mdast';
 import * as RemarkParse from 'remark-parse';
 
 import { parse, ParseResult } from './peg/tableCaption';
 
-const MathTokenizer: RemarkParse.Tokenizer = function(eat, value, silent) {
+const MathTokenizer = function(this: any, eat: RemarkParse.Eat, value: string, silent?: boolean) {
   let result: ParseResult;
   try {
     result = parse(value);
@@ -15,19 +15,16 @@ const MathTokenizer: RemarkParse.Tokenizer = function(eat, value, silent) {
     return true;
   }
 
-  const matchStr = value.substring(
-    result.location.start.offset,
-    result.location.end.offset
-  );
+  const matchStr = value.substring(result.location.start.offset, result.location.end.offset);
 
-  const now = eat.now();
+  const now = (eat as any).now();
   const offset = matchStr.indexOf(result.caption);
   now.column += offset;
   if (now.offset) {
     now.offset += offset;
   }
 
-  const node: MDAST.TableCaption = {
+  const node: mdast.TableCaption = {
     type: 'tableCaption',
     children: this.tokenizeInline(result.caption, now),
   };

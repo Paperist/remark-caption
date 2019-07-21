@@ -1,9 +1,7 @@
-import { UNIST } from 'unist';
+import * as unist from 'unist';
 
 declare module 'mdast' {
-  export namespace MDAST {
-    interface TableCaption extends UNIST.Parent {
-      type: 'tableCaption';
-    }
+  export interface TableCaption extends unist.Parent {
+    type: 'tableCaption';
   }
 }
