@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/Paperist/remark-caption/issues"
   },
-  "version": "1.0.1",
+  "version": "2.0.0",
   "main": "lib/index.js",
   "files": [
     "lib"
